@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sort Assignment</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="container is-fluid">
+      <section class="hero-head">
+        <div class="tile is-parent box">
+         <h1 class="title content">
+          Name List
+         </h1>
+        </div>
+       <div class="hero-body">
+        <div class="columns">
+          <div class="notification">
+            <ul type="a" id="unsorted"></ul>
+          </div>
+          <div class="column">
+            <button class="button is-link is-outlined is-fullwidth" onclick="sortList()">Alphabetical Order</button>
+          </div>
+          <div class="notification">
+            <ul type="a" id="sorted"></ul>
+          </div>
+        </div>
+        </div>
+        <div class="hero-footer">
+            <h1 class="">
+            </h1>
+           </div>
+      </section>
+   <script>
+      var myList = ["Harriet ", "Linda", "Abel", "George"];
+      var unsorted = document.getElementById("unsorted");
+      for (var i = 0; i < myList.length; i++) {
+        unsorted.innerHTML += "<li>" + myList[i] + "</li>";
+      }
+
+      function sortList() {
+        myList.sort();
+        var sorted = document.getElementById("sorted");
+        sorted.innerHTML = "";
+        for (var i = 0; i < myList.length; i++) {
+          sorted.innerHTML += "<li>" + myList[i] + "</li>";
+        }
+      }
+     
+    </script>
+  </body>
+</html>
